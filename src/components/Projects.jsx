@@ -17,7 +17,7 @@ const projects = [
     title: 'Fitness Buddy',
     image: ProjectImg2,
     description: 'A responsive task management application to help users organize their daily tasks efficiently.',
-    tech: ['React', 'Firebase', 'Tailwind CSS'],
+    tech: ['JavaScript', 'HTML', 'CSS', 'Weather API'],
     github: 'https://github.com/solankiamn8/',
     live: 'https://enchanting-kringle-d5a0cd.netlify.app/',
   },
