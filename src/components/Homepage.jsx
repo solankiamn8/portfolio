@@ -6,13 +6,13 @@ import { HiArrowNarrowRight } from 'react-icons/hi';
 const Homepage = () => {
   return (
     // ADDED `flex items-center` HERE to vertically center the entire container
-    <section id="home" className="w-full min-h-screen bg-[#0a192f] flex items-center">
+    <section id="home" className="w-full min-h-screen bg-[#0a192f] flex items-center pt-[80px]">
       {/* Container */}
       {/* REMOVED `h-full` as it's no longer needed */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col md:flex-row items-center justify-center">
         
         {/* Profile Image */}
-        <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
+        <div className="flex-shrink-0 mb-8 md:mb-0 md:mr-12 flex justify-center">
           <img src={ProfilePhoto} alt="Aman Solanki" className="rounded-full border-4 border-[#64ffda] object-cover w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64" />
         </div>
 

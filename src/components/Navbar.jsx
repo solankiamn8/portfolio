@@ -4,10 +4,24 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    // Open in a new tab
+    window.open(resumeViewUrl, "_blank", "noopener,noreferrer");
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = resumeDownloadUrl;
+    link.download = "Aman_Solanki_Resume.pdf"; // customize filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // Resume link for viewing in a new tab
-  const resumeUrl =
+  const resumeViewUrl =
     "https://drive.google.com/file/d/1DIGSsu3FZZU3shwwUBdQMrqIhQW5HuIr/view?usp=sharing";
+  const resumeDownloadUrl =
+    "https://drive.google.com/uc?export=download&id=1DIGSsu3FZZU3shwwUBdQMrqIhQW5HuIr";
 
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 md:px-8 bg-[#0a192f] text-gray-300 z-50">
@@ -43,14 +57,12 @@ const Navbar = () => {
 
       {/* Resume Button for Desktop */}
       <div className="hidden md:block">
-        <a
-          href={resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={handleResumeClick}
           className="border-2 border-[#64ffda] px-4 py-2 text-[#64ffda] rounded-md hover:bg-[#64ffda] hover:text-[#0a192f] transition-all duration-300 font-semibold"
         >
           Resume
-        </a>
+        </button>
       </div>
 
       {/* Hamburger Icon */}
@@ -103,14 +115,12 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={handleResumeClick}
             className="text-4xl hover:text-[#64ffda]"
           >
             Resume
-          </a>
+          </button>
         </li>
       </ul>
     </div>
